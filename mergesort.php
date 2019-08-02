@@ -10,12 +10,9 @@ function MergeSort($item)
         $middle = (int) ( count($item)/2 );
         $left=array_slice($item,0,$middle);
         $right= array_slice($item,$middle);
-        print_r($left);
-        echo "\n";
+
 
         $left=MergeSort($left);
-        print_r($right);
-        echo "\n";
         $right=MergeSort($right);
         return merge($left,$right);
     }
