@@ -37,9 +37,7 @@ class Solution {
         }
         if((!isset($unique_data[$data->val]))and (isset($data->val)))
         {
-            $unique_data[$data->val]=0;
             $node->next=new ListNode($data->val);
-            $node=&$node->next;
         }
 
          return $main_node;
