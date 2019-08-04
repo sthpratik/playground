@@ -23,11 +23,8 @@ class Solution {
         
         $s=str_split($s);
         $small_bracket_start=array();
-        $small_bracket_end=array();
         $curly_bracket_start=array();
-        $curly_bracket_end=array();
         $square_bracket_start=array();
-        $square_bracket_end=array();
         $status=true;
         
         for($i=0;$i<count($s);$i++) 
@@ -69,11 +66,11 @@ class Solution {
                                      
         }
         
-        if (($status)
-            and((count($small_bracket_start)!=count($small_bracket_end))
-            or (count($curly_bracket_start)!=count($curly_bracket_end))
-            or (count($square_bracket_start)!=count($square_bracket_end)))
-            )
+        if (
+            ($status) and
+            (
+                (count($small_bracket_start)>0)or (count($curly_bracket_start)>0)or (count($square_bracket_start)>0)
+            ))
         {
             $status=false;           
         }            
